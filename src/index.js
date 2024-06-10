@@ -10,6 +10,14 @@
 
 export default {
 	async fetch(request, env, ctx) {
-		return new Response('Hello World!');
-	},
+	  // Get the IP address from the CF-Connecting-IP header
+	  const ipAddress = request.headers.get('CF-Connecting-IP');
+  
+	  // Return the IP address in the response
+	  return new Response(ipAddress, {
+		    headers: {
+		      'Content-Type': 'text/plain'
+		    }
+	  });
+   },
 };
