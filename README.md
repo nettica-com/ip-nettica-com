@@ -44,9 +44,9 @@ Both HTTP and HTTPS requests are supported.
   </tr>
 </table>
 
-The result `${ip}` is an IPv4 or IPv6 address.  You will always receive just the IP address with a `text/plain` Accept header.  For HTML,
+The result `${ip}` is an IPv4 or IPv6 address.  You will always receive just the IP address with a `text/plain` `Accept` header.  For HTML,
 the IP address is encapsulated in a paragraph tag.  There are other tags on the page to make it valid and well-formed.  For new applications,
-it's recommended that you set the Accept header to your desired format.  The `Content-Type` response header will be set accordingly.
+it's recommended that you set the `Accept` header to your desired format.  The `Content-Type` response header will be set accordingly.
 
 ## Examples
 ### curl
