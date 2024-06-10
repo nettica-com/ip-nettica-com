@@ -11,7 +11,7 @@ an astonishing amount of traffic, even after being down for so long.  It's been 
 to support IPv6; and now will return results in JSON, XML, and HTML, in addition to the original plain text.
 
 ## HTTP API
-Both HTTP and HTTPS are supported.
+Both HTTP and HTTPS requests are supported.
 
 <table>
   <tr>
@@ -35,13 +35,18 @@ Both HTTP and HTTPS are supported.
     <td>&lt;p&gt;$ip&lt;/p&gt;</td>
   </tr>
   <tr>
+    <td>text/plain</td>
+    <td>$ip</td>
+  </tr>
+  <tr>
     <td>(none)</td>
     <td>$ip</td>
   </tr>
 </table>
 
-$ip is an IPv4 or IPv6 address.  For HTML, the IP address is encapsulated in a paragraph tag.  There are other tags on the page to make 
-it valid and well-formed.  For new applications, it's recommended that you set the Accept header to your desired format.
+The result $ip is an IPv4 or IPv6 address.  You will always receive just the IP address with text/plain.  For HTML, the IP address
+is encapsulated in a paragraph tag.  There are other tags on the page to make it valid and well-formed.  For new applications,
+it's recommended that you set the Accept header to your desired format.
 
 ## Examples
 ### curl
