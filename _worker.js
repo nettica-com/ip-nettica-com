@@ -35,15 +35,15 @@ export default {
 
             case "application/json":
             case "text/json":
-                return new Response(`{"ip":"${ip}"}`, { headers: { 'Content-Type': 'application/json' } });
+                return new Response(`{"ip":"${ip}"}`, { headers: { 'Content-Type': ah } });
 
             case "application/xml":
             case "text/xml":
-                return new Response(`<ip>${ip}</ip>`, { headers: { 'Content-Type': 'application/xml' } });
+                return new Response(`<?xml version="1.0"?><ip>${ip}</ip>`, { headers: { 'Content-Type': ah } });
 
             case "text/html":
-                return new Response(`<html><body><p>${ip}</p><a href="https://nettica.com/">sponsored by nettica.com</a></body></html>`, { headers: { 'Content-Type': 'text/html' } });
-            
+                return new Response(`<html><body><p>${ip}</p><a href="https://nettica.com/">sponsored by nettica.com</a></body></html>`, { headers: { 'Content-Type': ah }});
+
             default:
                 return new Response( ip, { headers: { 'Content-Type': 'text/plain' } });
         }
