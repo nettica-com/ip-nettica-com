@@ -11,7 +11,7 @@
 export default {
 	async fetch(request, env, ctx) {
 	  // Get the IP address from the CF-Connecting-IP header
-	    const ip = request.headers.get('CF-Connecting-IP');
+	const ip = request.headers.get('CF-Connecting-IP');
         var   ah = request.headers.get('Accept');
         const ua = request.headers.get('User-Agent');
         const url = new URL(request.url);
