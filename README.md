@@ -56,3 +56,7 @@ curl -H "Accept: application/xml"  https://ip.nettica.com
 curl ip.nettica.com
 
 ```
+## Debugging
+```
+npx wrangler tail {project}
+```
