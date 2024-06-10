@@ -11,12 +11,22 @@
 export default {
 	async fetch(request, env, ctx) {
 	  // Get the IP address from the CF-Connecting-IP header
-	  const ip = request.headers.get('CF-Connecting-IP');
-	  console.log(`ip=${ip}`)  
-	  // Return the IP address in the response
-	  return new Response(ip, {
+	    const ip = request.headers.get('CF-Connecting-IP');
+        const url = new URL(request.url);
+        const path = url.pathname;
+
+        console.log(`ip=${ip}\t path=${path}\t`)
+
+        // if the path is not "/" return static asset
+        if (path !== "/") {
+            return env.ASSETS.fetch(request);
+        }
+        
+	    console.log(`ip=${ip}`)  
+	    // Return the IP address in the response
+	    return new Response(ip, {
 		    headers: {
-		      'Content-Type': 'text/plain'
+		        'Content-Type': 'text/plain'
 		    }
 	  });
    },
