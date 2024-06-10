@@ -1,5 +1,5 @@
 
-# <img src="./favicon.ico" /> ip-nettica-com
+# <img src="./favicon.ico" height="32px" /> ip-nettica-com
 
 This serverless app hosted on Cloudflare returns the caller's current IP address.
 It returns results as plain text, JSON, XML, or HTML.
