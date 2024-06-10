@@ -24,29 +24,29 @@ Both HTTP and HTTPS requests are supported.
   </tr>
   <tr>
     <td>application/json</td>
-    <td>{"ip":"$ip"}</td>
+    <td>{"ip":"${ip}"}</td>
   </tr>
   <tr>
     <td>application/xml</td>
-    <td>&lt;ip&gt;$ip&lt;/ip&gt;</td>
+    <td>&lt;ip&gt;${ip}&lt;/ip&gt;</td>
   </tr>
   <tr>
     <td>text/html</td>
-    <td>&lt;p&gt;$ip&lt;/p&gt;</td>
+    <td>&lt;p&gt;${ip}&lt;/p&gt;</td>
   </tr>
   <tr>
     <td>text/plain</td>
-    <td>$ip</td>
+    <td>${ip}</td>
   </tr>
   <tr>
     <td>(none)</td>
-    <td>$ip</td>
+    <td>${ip}</td>
   </tr>
 </table>
 
-The result $ip is an IPv4 or IPv6 address.  You will always receive just the IP address with text/plain.  For HTML, the IP address
-is encapsulated in a paragraph tag.  There are other tags on the page to make it valid and well-formed.  For new applications,
-it's recommended that you set the Accept header to your desired format.
+The result `${ip}` is an IPv4 or IPv6 address.  You will always receive just the IP address with a `text/plain` Accept header.  For HTML,
+the IP address is encapsulated in a paragraph tag.  There are other tags on the page to make it valid and well-formed.  For new applications,
+it's recommended that you set the Accept header to your desired format.  The `Content-Type` response header will be set accordingly.
 
 ## Examples
 ### curl
@@ -58,5 +58,5 @@ curl ip.nettica.com
 ```
 ## Debugging
 ```
-npx wrangler tail {project}
+npx wrangler tail ${project}
 ```
