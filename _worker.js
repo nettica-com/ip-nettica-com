@@ -13,10 +13,11 @@ export default {
 	  // Get the IP address from the CF-Connecting-IP header
 	    const ip = request.headers.get('CF-Connecting-IP');
         var   ah = request.headers.get('Accept');
+        const ua = request.headers.get('User-Agent');
         const url = new URL(request.url);
         const path = url.pathname;
 
-        console.log(`ip=${ip}\t path=${path}\t Accept=${ah}`)
+        console.log(`ip=${ip} \t path=${path} \t ua=${ua} \t Accept=${ah}`)
 
         // if the path is not "/" return static asset
         if (path !== "/") {
