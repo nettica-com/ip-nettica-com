@@ -11,8 +11,11 @@
 export default {
 	async fetch(request, env, ctx) {
 	  // Get the IP address from the CF-Connecting-IP header
-	  const ip = request.headers.get('CF-Connecting-IP');
-	  console.log(`ip=${ip}`)  
+	  var ip = request.headers.get('CF-Connecting-IP');
+	  if (ip === null) {
+		ip = "hello world";
+	  }
+	  console.log(`ip=${ip}`);
 	  // Return the IP address in the response
 	  return new Response(ip, {
 		    headers: {
