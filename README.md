@@ -54,6 +54,8 @@ it's recommended that you set the `Accept` header to your desired format.  The `
 curl -H "Accept: application/json" https://ip.nettica.com
 curl -H "Accept: application/xml"  https://ip.nettica.com
 curl ip.nettica.com
+curl -H "Accept: application/json" https://ip.nettica.com/all
+curl ip.nettica.com/all
 
 ```
 ## Debugging
